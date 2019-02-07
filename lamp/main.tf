@@ -57,7 +57,6 @@ variable "php_instance_name" {
   description = "The hostname of server with php"
   default     = "lampPhp"
 }
-
 variable "db_instance_name" {
   description = "The hostname of server with mysql"
   default     = "lampDb"
@@ -297,10 +296,13 @@ resource "aws_instance" "php_server" {
   vpc_security_group_ids      = ["${aws_security_group.application.id}"]
   key_name                    = "${aws_key_pair.temp_public_key.id}"
   associate_public_ip_address = true
-
-  tags {
-    Name = "${var.php_instance_name}"
-  }
+  tags = "${merge(
+   module.camtags.tagsmap,
+   map(
+     "Name", "${var.php_instance_name}"
+   )
+ )}"
+  
 
   # Specify the ssh connection
   connection {
@@ -393,6 +395,7 @@ resource "aws_db_instance" "mysql" {
   publicly_accessible    = true
   vpc_security_group_ids = ["${aws_security_group.database.id}"]
   skip_final_snapshot    = true
+# tags                   = "${module.camtags.tagsmap}"
 }
 
 ##############################################################
