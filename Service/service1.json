@@ -399,14 +399,26 @@
           "notifications": [
             {
               "emailnotification": {
-                "title": "send_email",
+                "title": "Success_Email",
                 "type": "email",
                 "receiverList": "${input_parameters.user_email}",
                 "id": "emailnot56e37b29",
                 "sender": "CAMadmin",
                 "copyToList": "",
                 "subject": "Your LAMP stack is ready",
-                "body": "Your LAM Stack is deployed and you can access it here"
+                "body": "Your LAM Stack is deployed and you can access it here\nhttps://169.48.27.244:30000/cam/portal/!#/"
+              }
+            },
+            {
+              "emailnotification": {
+                "title": "Error_email",
+                "type": "email",
+                "receiverList": "${input_parameters.user_email}",
+                "id": "emailnot094bac45",
+                "sender": "CAMadmin",
+                "copyToList": "",
+                "subject": "Your LAMP stack failed to deploy",
+                "body": "Check into the failures here\n   \nhttps://169.48.27.244:30000/cam/portal/#!/serviceinstances"
               }
             }
           ],
@@ -414,7 +426,9 @@
             "0": "decision4441041f",
             "1": "emailnot56e37b29"
           },
-          "error_sequence": {}
+          "error_sequence": {
+            "0": "emailnot094bac45"
+          }
         },
         "output_parameters": []
       }
