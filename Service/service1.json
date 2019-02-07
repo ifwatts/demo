@@ -198,23 +198,23 @@
             "label": "Google SSH Pub Key",
             "customtype": "password",
             "type": "password",
-            "immutable": false,
-            "hidden": false,
+            "immutable": true,
+            "hidden": true,
             "required": true,
             "secured": true,
             "description": "public ssh key for Google cloud",
-            "default": "^(Z3NkZmdzZGZnZmRzZ2Zkc2c=)"
+            "default": "^(c3NoLXJzYSBBQUFBQjNOemFDMXljMkVBQUFBREFRQUJBQUFDQVFDMUh6SjM4Z3d1ZTBjWENuNUJqTU1mRWRhTDA5bkVFWXRCclBuYldRbTFGUnN5WjE4SVhIQmJLbHhVandMc1Qyc1lmVzdobXJwWXFtYjZjd3p3VHF1YVdNdFN4WUJwNFFQT0p3UDJFNTdTTkMzVTNnbWhpUSs2V0FaTHAvcXFqbnJRQS84ZkJOblVaeGVET0ZzTEFmanpHdk02a3dqMnhMVmlMY3RDWkY3M2Irek9lSFhabGtzYUd6MlZrMEQ3bGZDazNFamRVQ3lDM2gvYTFPUzBjTEsrMDROS1NHWmU5dC9xY1hUQ1FZT2lIL3ZWYmRxQmRsOE9KWTBYSitWSUFpbmdqZ3gwS3RNU3Z6amNwZGRtY2V2bzRjd1phVjJ5RjZvdzB5TzhWSkNYTU5WVWxUTnI0aklQT2JLbS9Sd1Y4em1IaFBhVWEwdDNOWEpXS2ozVlQ5Nm1ScXdBQ2Rjb3ZVZ1RQTzh0YUJjZEIrWVVnTUZpalozM09LUXNyMzNLSndpSVI4V2cyODYzNUMxK2RrdjI3TE1LZHFObzZVVk9BWGIwZFdwRXdtdHpFZVVDdXRwZ3dLMDlsWnpXem02QnpsNy9zeVBaZG1EL2wycUM5NUVQcUpzVVNRUEloVVhzV2JKN1NUVEdINWdHRUtpaEtrcWJEQys5ZTRQTlEzaFQ1YmcxMWRSVG1zdjRFRnFoTHc1ejJNR09USmJ6QlpUWUg4blNvT0dtMDIvYUJnUER4Y2FEN2h1dnlPOEY4YXNCM2VpMFRLb1hCZkg5Z0xjb0djdWlrdm9sS1Jna2ZIQmhUa09kc0hkWjlic2p4RVd2QXd0M2FUQTNNYWE2eHppekRWMzBkNm41aTU4bjVvRHZrQnhabHg2d1g1MzdNQXBUUUlBSXNWSlVMaVVzUVE9PSBpYW4ud2F0dHM3N0BnbWFpbC5jb20=)"
           },
           {
             "name": "gce_ssh_pri_key",
             "label": "Google Private SSH Key",
             "customtype": "password",
             "type": "password",
-            "immutable": false,
-            "hidden": false,
+            "immutable": true,
+            "hidden": true,
             "required": true,
             "secured": true,
-            "default": "^(c2RmZ3NmZGdzZGc=)"
+            "default": "^(TFMwdExTMUNSVWRKVGlCUFVFVk9VMU5JSUZCU1NWWkJWRVVnUzBWWkxTMHRMUzBLWWpOQ2JHSnVUbnBoUXpGeVdsaHJkR1JxUlVGQlFVRkJRa2MxZG1KdFZVRkJRVUZGWW0wNWRWcFJRVUZCUVVGQlFVRkJRa0ZCUVVOR2QwRkJRVUZrZW1NeVozUmpiZ3BPYUVGQlFVRkJkMFZCUVZGQlFVRm5SVUYwVWpoNVpDOUpUVXh1ZEVoR2QzQXJVVmw2UkVoNFNGZHBPVkJhZUVKSFRGRmhlalV5TVd0S2RGSlZZazF0WkdaRFJuaDNDbGQ1Y0dOV1NUaEROMFU1Y2tkSU1YVTBXbkUyVjB0d2JTdHVUVTA0UlRaeWJXeHFURlZ6VjBGaFpVVkVlbWxqUkRsb1QyVXdhbEYwTVU0MFNtOVphMUIxYkdkSFV6WUtaalp4YnpVMk1FRlFMMGgzVkZveFIyTllaM3BvWWtOM1NEUTRlSEo2VDNCTlNUbHpVekZaYVROTVVXMVNaVGt5TDNONmJtZ3hNbHBhVEVkb2N6bHNXazVCS3pWWWR3cHdUbmhKTTFaQmMyZDBOR1l5ZEZScmRFaERlWFowVDBSVGEyaHRXSFppWmpadVJqQjNhMGRFYjJndk56RlhNMkZuV0ZwbVJHbFhUa1o1Wm14VFFVbHdORWswVFdSRENuSlVSWEk0TkROTFdGaGFia2h5Tms5SVRVZFhiR1J6YUdWeFRVNU5hblpHVTFGc2VrUldWa3BWZW1FclNYbEVlbTE1Y0hZd1kwWm1UVFZvTkZReWJFZDBUR1I2Vm5rS1ZtbHZPVEZWTDJWd2EyRnpRVUZ1V0V0TU1VbEZlbnAyVEZkbldFaFJabTFHU1VSQ1dXOHlaRGw2YVd0TVN6azVlV2xqU1dsRlprWnZUblpQZEN0UmRHWnVXa3c1ZFFwNWVrTnVZV3BoVDJ4R1ZHZEdNamxJVm5GU1RVcHlZM2hJYkVGeWNtRlpUVU4wVUZwWFl6RnpOWFZuWXpWbEx6ZE5hakpZV21jdk5XUnhaM1psVWtRMmFXSkdSV3RFQ25sSlZrWTNSbTE1WlRCck1IaG9LMWxDYUVOdmIxTndTMjEzZDNaMldIVkVlbFZPTkZVclZ6Uk9aRmhWVlRWeVRDdENRbUZ2VXpoUFl6bHFRbXByZVZjNGQxZFZNa0lLTDBvd2NVUm9jSFJPZGpKbldVUjNPRmhIWnlzMFluSTRhblpDWmtkeVFXUXpiM1JGZVhGR2QxaDRMMWxETTB0Q2JreHZjRXcyU2xOcldVcEllSGRaVlRWRWJtSkNNd3BYWmxjM1NUaFNSbkozVFV4a01tdDNUbnBIYlhWell6UnpkekZrT1VobGNDdFpkV1pLSzJGQk56VkJZMWRhWTJWelJpdGtLM3BCUzFVd1EwRkRURVpUVmtNMGJFeEZDa1ZCUVVGa1VYZ3libkZuT0dSd05tOU5RVUZCUVVoak0wNXZURmhLZWxsUlFVRkJaMFZCZEZJNGVXUXZTVTFNYm5SSVJuZHdLMUZaZWtSSWVFaFhhVGxRV25oQ1Iwd0tVV0Y2TlRJeGEwcDBVbFZpVFcxa1prTkdlSGRYZVhCalZrazRRemRGT1hKSFNERjFORnB4TmxkTGNHMHJiazFOT0VVMmNtMXNha3hWYzFkQllXVkZSSHBwWTBRNWFBcFBaVEJxVVhReFRqUktiMWxyVUhWc1owZFRObVkyY1c4MU5qQkJVQzlJZDFSYU1VZGpXR2Q2YUdKRGQwZzBPSGh5ZWs5d1RVazVjMU14V1drelRGRnRVbVU1TWk5ekNucHVhREV5V2xwTVIyaHpPV3hhVGtFck5WaDNjRTU0U1ROV1FYTm5kRFJtTW5SVWEzUklRM2wyZEU5RVUydG9iVmgyWW1ZMmJrWXdkMnRIUkc5b0x6Y3hWek5oWjFnS1dtWkVhVmRPUm5sbWJGTkJTWEEwU1RSTlpFTnlWRVZ5T0RRelMxaFlXbTVJY2paUFNFMUhWMnhrYzJobGNVMU9UV3AyUmxOUmJIcEVWbFpLVlhwaEswbDVSSHB0ZVFwd2RqQmpSbVpOTldnMFZESnNSM1JNWkhwV2VWWnBiemt4VlM5bGNHdGhjMEZCYmxoTFRERkpSWHA2ZGt4WFoxaElVV1p0UmtsRVFsbHZNbVE1ZW1sclRFczVPWGxwQ21OSmFVVm1SbTlPZGs5MEsxRjBabTVhVERsMWVYcERibUZxWVU5c1JsUm5Sakk1U0ZaeFVrMUtjbU40U0d4QmNuSmhXVTFEZEZCYVYyTXhjelYxWjJNMVpTODNUV29LTWxoYVp5ODFaSEZuZG1WU1JEWnBZa1pGYTBSNVNWWkdOMFp0ZVdVd2F6QjRhQ3RaUW1oRGIyOVRjRXR0ZDNkMmRsaDFSSHBWVGpSVksxYzBUbVJZVlZVMWNrd3JRZ3BDWVc5VE9FOWpPV3BDYW10NVZ6aDNWMVV5UWk5S01IRkVhSEIwVG5ZeVoxbEVkemhZUjJjck5HSnlPR3AyUW1aSGNrRmtNMjkwUlhseFJuZFllQzlaUXpOTFFtNU1DbTl3VERaS1UydFpTa2g0ZDFsVk5VUnVZa0l6VjJaWE4wazRVa1p5ZDAxTVpESnJkMDU2UjIxMWMyTTBjM2N4WkRsSVpYQXJXWFZtU2l0aFFUYzFRV05YV21ObGMwWUtLMlFyZWtGTFZUQkRRVU5NUmxOV1F6UnNURVZGUVVGQlFVUkJVVUZDUVVGQlEwRkNRVTlxWm1wWlQyOUJPR0ZhWWk5V1UxbFhhRzh6VVd4UllXTmFNbVpqWW1zMFN3cFBZbEpoWkcxUVdsWlRibTk0UTBsSWJpdGFWa2xSTlZkQ01YQlFlVUo2U25ObVZFdE9UVGMzWmtadGFuSllaalJaV0c5NlpWRk5SR2N4YW1adEsycEJlVXhqWlVWcENuaHpaRGgxZUZNMFZrbHJNVFZtZHpFNFpIRjZiRWh1Um1WdmIzZDBjVGhMZWtZemRUTkNTakJGV1d0aGRISnlhbWcxU2tsb1REbENRMkZKY2xSdFJsRXdNbTVRV0VrS09VSnRkMGN3VW1KUFpVSjVlRFJaUjFOMWEzbHdhbk5KYVc5dGJtazBaRzgzUlZkaE5FSXpUM1p2Y25SV1JGbEVRMDlNVGpSQ05FRnNUbnBuYmxGRVZURnNVVE16UlFwR2VYcHpiRWwyYVdwbFIwUjRVMGMwVTBrM01rWjNSbTFvY0ZFeWJGQnVRM2gyUzBKeWQyNXNMMVptVkRoTE1rNVpkbGxSYjIxVFEwNVNablJsU0c1QmVVSm1kbU5UQ2pWV1UwVXhXWEpSU0U1UldHeDJPR2RsT1hoeWNtdFBhelozV1VsbE5pdHdVRmxCVG5remEyNXZRVWxQU2xkSU9VVlpiMmQ2VGpKWWVtNUpZa2gyWlRkemVHWnBjSElLWlhBcllub3JXbHBFVEhSdGNEVjRVMk5yUTFwaFQzZFhiMUV4YzBoRWJFSm9MMDl4UldGdFptOVFNblY1Uml0ME5tcHFOVk5aYzBwd1dVeEphMDEyVlVSV1lVaE5XQXBFYldSUEwzUjFUR3BUVEU5MlRtNHZOa3g1S3lzNE9USk1NVTFtY1RabU9VRk1jMmhRUlVnM1VHVkRUbVZXV21kbVdUVnZjMVpRZEUxRGFtWTVZbEIyY25aM2FXWkhDbFJ4VW5CeFJtMUJiQ3R4VHpkcFVDOTNSSHByVkc5Q2RXbDRXakZoVGxoeGNGbGxOSGxoY2k5WFFuRklkRGhYVWtwMFJtVkxOa051TkUxQ2VGVjBXbmRITkUxM1FYa0tOVVpWYTJWeVRVWmxMMlZGUkRSWFVFazFiSEY0VGpod1prbGlkMXBPY25OUlNESmxTamt3VmtsNldUQmhka2RrVVZCUGJFWTNhV2d6ZW1WblJreFJTMll4VGxkTGFncFJiakY0V1d4dmVXNVhXazlYUWxsMldVSkJRVUZDUVZGRVdXTXJVRU41Wm5kelVqbG5NMWx3UVVaVFVYbFhjVVZrT0ZkS1YzSmtaUzlST1VSTVREWlJPSE5LU1hGNENqTnJVVmRKUkdnclRHUllSV3hDTHpSNlZIRjFaRE0wUkRGaFVVeEtNak5pZDFwa1NGWmtWVGxxVFV3eVFUSk9WbWRMWVc1R2JFVkZNMUJHYmtkRkwyaDFXbE14T0ZNS01XdzBVVFZZTDB0UE1rOUZUVm8xV25Cc1JWTnNPSGcyWW5CNVlVWm5RM0ZuY0dwa1pFeEZXRFJDTTJob1dsaDBibVJyVFZaU0wzcGtjRVpJVmxWRVNqWTFRMjVPUlFwblpGTlJWVkkwY21KUU5YQlBWalE1WXpOTVNtRk1lWG93UkZKR1Z5OVlaRVZOYVRkckwzSnBTSEkzVGpKa01GbFBkVzg1V25GWVEwa3dlR1JQVDA1cFdXaEhia1JaQ2tJdlVGWkxTMGR2YURZMVFUWjRkVGRoTWxwelQzcEdlREk1YTNVNGQyUnBiVWgyWms1eWVtUjJaMjE2ZG1ZelJWSlVkMGxKWjFSMFMyeE9RVTF0YWtRM1pFOU5lV3NLU1ZobFZrTTBTa05CWlRGd1FqRnFVMEZCUVVKQlVVUlplR1ZKZVd0S1NXcERTR0oxVlRsd1RqWnZaMUoxVjNScE9XeExZeTh3Y0c1b2JFaG1SSFpqWkU1UVRYWlpTd280U21WWE5tZFJVMkpFYzFwTmFIUm1kRTVSVWxCeFRYaFllbmwzYTI1U2VsSkRkMnRUVGs5c01FNVliSGxtYlU5TUwwdDVSRkphZGpSMU9EVnNVRzFpUmtWd2NrSTFDbUkwVVV4UFJqTkpUVTlOSzJWb1VtOXRhMjlMTkdoek9ETnlVSFpVVkZFeEsydDVTVXMwY3pacFZEaHhZa04wVGpOdmNHWlRlWFZGTm1wbVZXSkZla3BTWVZJMldYVUtRV05EYzNCSFlXeHpSMEZVVWxVeWFETk9SV1Y2Vkd4WVQzUnBMMjVOY2s5dFdYWTJWMDFVVEdoNmJIaDRWRk4yTDNoeFYwbHZkMXBUU1ZCWE5GSldUV1JKYmxVMllRcGlTVkFyV1RoWVowZFNZbmxtVm1WWk1IWjVRV05hZHpobllpOTFSVmh4YmpWd1p6ZHhXSHBIZDBad2J6UnZZa1pYZDJWTlJVb3JPVXA2ZW0xNlZHTmhaRWxNWlc1cUNqTmhiRWRsUzA5MFFVTm9aamhTUVVGQlFrRlJSRlkxWTBnMWJEaG5VMDVNY1M4MFowOWlhMHBwTjBwMlpreDVNRGgxTmk5aGRrUmlReTgyZEZaQmN6TXpUWG96UjFrS1lWUjZaa3BQYW5FM2FqVm5VRkZNVUVwWU1rWnpSRXhYTTFad01XdFNNMWN5ZURWdFNXUjVNMGhrT1dNd1ZqbHpUR2hOUkZabFVEVlpXRmd4U25Wb1ZHZEhWa1JRS3dwTFNHZExMM2hvY0N0RU1tbElRVWhoVjFKck9HSkNkamM0YkcxUWNsWldVbWd6WldOQldXRjZSazR4WVRCcU5FcDVVRXBZYzJOQk9FaFVNRTl4VXpkMlIzQktZVFpGQ25CSWJtaHNXSE16ZDNaT1ozWkJha3cwTWpsQ2NtbHVZMmQ0VkZRMmNGYzViR1JqTmpONmRuSlZObTlPUW5CVFRIaFJjbmRNU2taUVZ6UnVlbm80UjFGSmFWWnJaREFLTW13eGJsSTJaRk00WlV0RGJHbDBaRnAzYUZaM2ExcHBWVTgzWjBvMk5GZFJibEYxZWpWSGNWaDVTRk5rUVVaT1JHbEtMM1l5UWtNd1J6UnJWRVpWU0Rad1QyZzBkQXAxYXpKb1pISklUMWhpYjNoQlFVRkJSbGRzYUdKcE5UTlpXRkl3WTNwak0xRkhaSFJaVjJ4elRHMU9kbUpSUlVOQmQxRkdDaTB0TFMwdFJVNUVJRTlRUlU1VFUwZ2dVRkpKVmtGVVJTQkxSVmt0TFMwdExRbz0=)"
           },
           {
             "name": "inst_name",
@@ -379,10 +379,10 @@
                   "boot_disk": "rhel-cloud/rhel-7",
                   "machine_type": "n1-standard-1",
                   "zone": "us-central1-a",
-                  "mariadb_hostname": "think1_mdb_a",
+                  "mariadb_hostname": "mdbdemo",
                   "mariadb_user": "camuser",
                   "mariadb_pwd": "${input_parameters.mariadb_pwd}",
-                  "php_hostname": "think1_php_a",
+                  "php_hostname": "phpdemo",
                   "gce_ssh_user": "camuser",
                   "gce_ssh_public_key": "${input_parameters.gce_ssh_pub_key}",
                   "gce_ssh_private_key": "${input_parameters.gce_ssh_pri_key}"
@@ -406,7 +406,7 @@
                 "sender": "CAMadmin",
                 "copyToList": "",
                 "subject": "Your LAMP stack is ready",
-                "body": "Your LAM Stack is deployed and you can access it here\nhttps://169.48.27.244:30000/cam/portal/!#/"
+                "body": "Your LAM Stack is deployed and you can access it here\nhttps://169.48.27.244:30000/cam/portal/#!/serviceinstances/${svc_instance.service_instance_id}"
               }
             },
             {
@@ -482,29 +482,6 @@
             "secured": false,
             "description": "the prefix of the lamp stack instances (must be globally unique)",
             "default": "lamp2"
-          },
-          {
-            "name": "gce_ssh_pub_key",
-            "label": "Google SSH Pub Key",
-            "customtype": "password",
-            "type": "password",
-            "immutable": true,
-            "hidden": true,
-            "required": true,
-            "secured": true,
-            "description": "public ssh key for Google cloud",
-            "default": "^(XihaM05rWm1kelpHWm5abVJ6WjJaa2MyYz0p)"
-          },
-          {
-            "name": "gce_ssh_pri_key",
-            "label": "Google Private SSH Key",
-            "customtype": "password",
-            "type": "password",
-            "immutable": true,
-            "hidden": true,
-            "required": true,
-            "secured": true,
-            "default": "^(XihjMlJtWjNObVpHZHpaR2M9KQ==)"
           }
         ]
       },
@@ -545,29 +522,6 @@
             "secured": true,
             "default": "",
             "label": "AWS Secret Key"
-          },
-          {
-            "name": "gce_ssh_pri_key",
-            "label": "Google Private SSH Key",
-            "customtype": "password",
-            "type": "password",
-            "immutable": true,
-            "hidden": true,
-            "required": true,
-            "secured": true,
-            "default": "^(XihjMlJtWjNObVpHZHpaR2M9KQ==)"
-          },
-          {
-            "name": "gce_ssh_pub_key",
-            "label": "Google SSH Pub Key",
-            "customtype": "password",
-            "type": "password",
-            "immutable": true,
-            "hidden": true,
-            "required": true,
-            "secured": true,
-            "description": "public ssh key for Google cloud",
-            "default": "^(XihaM05rWm1kelpHWm5abVJ6WjJaa2MyYz0p)"
           }
         ]
       },
@@ -606,29 +560,6 @@
             "required": false,
             "secured": false,
             "default": "^(dGVzdA==)"
-          },
-          {
-            "name": "gce_ssh_pub_key",
-            "label": "Google SSH Pub Key",
-            "customtype": "password",
-            "type": "password",
-            "immutable": true,
-            "hidden": true,
-            "required": true,
-            "secured": true,
-            "description": "public ssh key for Google cloud",
-            "default": "^(XihaM05rWm1kelpHWm5abVJ6WjJaa2MyYz0p)"
-          },
-          {
-            "name": "gce_ssh_pri_key",
-            "label": "Google Private SSH Key",
-            "customtype": "password",
-            "type": "password",
-            "immutable": true,
-            "hidden": true,
-            "required": true,
-            "secured": true,
-            "default": "^(XihjMlJtWjNObVpHZHpaR2M9KQ==)"
           }
         ]
       },
