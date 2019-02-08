@@ -230,15 +230,15 @@
           },
           {
             "name": "lamp_prefix",
-            "label": "Lamp Stack name prefix",
+            "label": "4 Digit host prefix for Lamp Stack Instances",
             "customtype": "string",
             "type": "string",
             "immutable": false,
             "hidden": false,
             "required": true,
             "secured": false,
-            "description": "the prefix of the lamp stack instances (must be globally unique)",
-            "default": "lamp2"
+            "description": "4 Digit prefix of the lamp stack instances (must be globally unique)",
+            "default": "lam2"
           }
         ],
         "flow": {
@@ -379,10 +379,10 @@
                   "boot_disk": "rhel-cloud/rhel-7",
                   "machine_type": "n1-standard-1",
                   "zone": "us-central1-a",
-                  "mariadb_hostname": "mdbdemo",
+                  "mariadb_hostname": "${input_parameters.lamp_prefix}-mariadb",
                   "mariadb_user": "camuser",
                   "mariadb_pwd": "${input_parameters.mariadb_pwd}",
-                  "php_hostname": "phpdemo",
+                  "php_hostname": "${input_parameters.lamp_prefix}-phpdemo",
                   "gce_ssh_user": "camuser",
                   "gce_ssh_public_key": "${input_parameters.gce_ssh_pub_key}",
                   "gce_ssh_private_key": "${input_parameters.gce_ssh_pri_key}"
@@ -406,7 +406,7 @@
                 "sender": "CAMadmin",
                 "copyToList": "",
                 "subject": "Your LAMP stack is ready",
-                "body": "Your LAM Stack is deployed and you can access it here\nhttps://169.48.27.244:30000/cam/portal/#!/serviceinstances/${svc_instance.service_instance_id}"
+                "body": "Your LAM Stack is deployed and you can access it here\n\nhttps://169.48.27.244:30000/cam/portal/#!/serviceDetails/${svc_instance.service_instance_id}\n\nIn the terraform logs you will find a link to the php test page"
               }
             },
             {
@@ -418,7 +418,7 @@
                 "sender": "CAMadmin",
                 "copyToList": "",
                 "subject": "Your LAMP stack failed to deploy",
-                "body": "Check into the failures here\n   \nhttps://169.48.27.244:30000/cam/portal/#!/serviceinstances"
+                "body": "Check into the failures here\n   \nhttps://169.48.27.244:30000/cam/portal/#!/serviceDetails/${svc_instance.service_instance_id}"
               }
             }
           ],
@@ -470,18 +470,6 @@
             "required": false,
             "secured": false,
             "default": "^(dGVzdA==)"
-          },
-          {
-            "name": "lamp_prefix",
-            "label": "Lamp Stack name prefix",
-            "customtype": "string",
-            "type": "string",
-            "immutable": true,
-            "hidden": true,
-            "required": true,
-            "secured": false,
-            "description": "the prefix of the lamp stack instances (must be globally unique)",
-            "default": "lamp2"
           }
         ]
       },
