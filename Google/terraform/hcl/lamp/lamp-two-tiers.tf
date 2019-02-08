@@ -4,6 +4,9 @@ provider "google" {
   version = "~> 1.5"
 }
 
+module "camtags" {
+  source  = "../Modules/camtags"
+}
 resource "google_compute_instance" "mariadb" {
   name         = "${var.mariadb_hostname}"
   machine_type = "${var.machine_type}"
