@@ -2,9 +2,9 @@
   "service": {
     "specVersion": "v3",
     "catalog_metadata": {
-      "name": "Single vm",
+      "name": "Lamp Stack Deployment with Starter Pack Templates",
       "description": "deploys a single VM to the chosen cloud",
-      "image": "serviceicon_1.svg",
+      "image": "serviceicon_2.svg",
       "category": "Think Demos",
       "bullets": [],
       "providerDisplayName": "IBM",
