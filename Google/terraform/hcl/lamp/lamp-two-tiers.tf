@@ -30,7 +30,7 @@ resource "google_compute_instance" "php" {
   name         = "${var.php_hostname}"
   machine_type = "${var.machine_type}"
   zone         = "${var.zone}"
-  tags = "${concat(module.camtags.tagslist, ["http-server"])}"
+  tags = "${module.camtags.tagslist}"
 
   boot_disk {
     initialize_params {
