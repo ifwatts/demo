@@ -32,7 +32,7 @@ output "test" {
   value = "${list("phpServer")}"
 }
 output "test2" {
-  value2 = "${concat(module.camtags.tagslist, list("mariadb"))}"
+  value = "${concat(module.camtags.tagslist, list("mariadb"))}"
 }
   
 resource "google_compute_instance" "php" {
