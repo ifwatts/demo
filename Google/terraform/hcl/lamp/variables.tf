@@ -1,3 +1,7 @@
+variable "mariadb_hostname" {
+  description = "A unique name for the MariaDB VM, required by GCE."
+}
+
 variable "mariadb_user" {
   description = "User to be added into db and sshed into servers"
   default     = "camuser"
