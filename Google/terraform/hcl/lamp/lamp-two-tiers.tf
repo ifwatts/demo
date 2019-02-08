@@ -6,7 +6,9 @@ provider "google" {
 
 module "camtags" {
   source  = "../Modules/camtags"
+  separator = "-"
 }
+
 resource "google_compute_instance" "mariadb" {
   name         = "${var.mariadb_hostname}"
   machine_type = "${var.machine_type}"
@@ -26,20 +28,14 @@ resource "google_compute_instance" "mariadb" {
   metadata {
     sshKeys = "${var.gce_ssh_user}:${var.gce_ssh_public_key}"
   }
-  #tags = "${concat(module.camtags.tagslist, list("mariadb"))}"
+  tags = ["${concat(module.camtags.tagslist, list("mariadb"))}"]
 }
-output "test" {
-  value = "${list("phpServer")}"
-}
-output "test2" {
-  value = "${concat(module.camtags.tagslist, list("mariadb"))}"
-}
-  
+ 
 resource "google_compute_instance" "php" {
   name         = "${var.php_hostname}"
   machine_type = "${var.machine_type}"
   zone         = "${var.zone}"
-  #tags = "${list("phpServer")}"
+  tags = ["${concat(module.camtags.tagslist, list("phpserver"))}"]
 
   boot_disk {
     initialize_params {
