@@ -404,7 +404,7 @@
               "Google Cloud LAMP stack deployment with tags": {
                 "title": "Google Cloud LAMP stack deployment with tags_082d2f",
                 "template_name": "Google Cloud LAMP stack deployment with tags",
-                "version": "master",
+                "version": "tags",
                 "id": "googleclec4bac1b",
                 "template_type": "Terraform",
                 "template_content_type": "Google Cloud",
@@ -423,8 +423,8 @@
                   "mariadb_pwd": "${input_parameters.mariadb_pwd}",
                   "php_hostname": "${input_parameters.lamp_prefix}php",
                   "gce_ssh_user": "camuser",
-                  "gce_ssh_public_key": "${input_parameters.gce_ssh_pub_key}",
-                  "gce_ssh_private_key": "${input_parameters.gce_ssh_pri_key}"
+                  "gce_ssh_public_key": "",
+                  "gce_ssh_private_key": ""
                 },
                 "outputs": [
                   "mariadb_IP",
