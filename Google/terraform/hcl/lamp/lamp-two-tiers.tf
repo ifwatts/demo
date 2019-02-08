@@ -26,14 +26,14 @@ resource "google_compute_instance" "mariadb" {
   metadata {
     sshKeys = "${var.gce_ssh_user}:${var.gce_ssh_public_key}"
   }
-  tags = "${module.camtags.tagslist}"
+  tags = “${concat(module.camtags.tagslist, list(“mariadb”))}”
 }
 
 resource "google_compute_instance" "php" {
   name         = "${var.php_hostname}"
   machine_type = "${var.machine_type}"
   zone         = "${var.zone}"
-  tags = "${module.camtags.tagslist}"
+  tags = “${concat(module.camtags.tagslist, list(“phpServer”))}”
 
   boot_disk {
     initialize_params {
