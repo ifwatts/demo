@@ -28,7 +28,29 @@
         "customtype": "string",
         "description": "choose the department that will be charged for the deployment",
         "isSystemTag": false,
-        "permission": "Read-Write"
+        "permission": "Read-Write",
+        "options": [
+          {
+            "label": "test",
+            "value": "test",
+            "default": false
+          },
+          {
+            "label": "dev",
+            "value": "dev",
+            "default": false
+          },
+          {
+            "label": "prod",
+            "value": "prod",
+            "default": false
+          },
+          {
+            "label": "sales",
+            "value": "sales",
+            "default": false
+          }
+        ]
       },
       {
         "name": "serviceinst",
@@ -44,15 +66,17 @@
       },
       {
         "name": "deployedby",
+        "label": "Deployed By Tag",
         "type": "string",
         "immutable": true,
-        "hidden": true,
+        "hidden": false,
         "required": false,
         "secured": false,
         "customtype": "string",
+        "description": "Deployed By Tag",
         "default": "cam-ped1",
         "isSystemTag": false,
-        "permission": "Invisible"
+        "permission": "Read-Only"
       }
     ],
     "actions": [
