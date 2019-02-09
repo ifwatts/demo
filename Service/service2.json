@@ -2,7 +2,7 @@
   "service": {
     "specVersion": "v3",
     "catalog_metadata": {
-      "name": "Lamp Stack Deployment with Tags",
+      "name": "Lamp Stack Deployment with Tags - New",
       "description": "deploys a single VM to the chosen cloud",
       "image": "serviceicon_6.svg",
       "category": "Think Demos",
