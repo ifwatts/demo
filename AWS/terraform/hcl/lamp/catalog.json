@@ -1,10 +1,10 @@
 {
-   "name": "LAMP stack deployment",
+   "name": "LAMP stack deployment with Tags",
    "description": "LAMP - A fully-integrated environment for full stack PHP web development.",
    "version": "1.0",
    "imageUrl": "./assets/svg/IBM_WebSphere_Standalone.svg",
    "image": "tp_WAS_standalone.png",
-   "type": "prebuilt",
+   "type": "userCreated",
    "status": "active",
    "manifest": {
      "template_type": "Terraform",
@@ -23,7 +23,7 @@
      }
    },
    "metadata": {
-     "displayName": "LAMP stack deployment",
+     "displayName": "LAMP stack deployment with tags",
      "providerDisplayName": "IBM",
      "longDescription": "Deploys a LAMP Stack (Linux, Apache, MySQL, PHP) in AWS providing a complete development environment. This deployment also deploys a simple sample application to validate the stack is operational.",
      "bullets": [
