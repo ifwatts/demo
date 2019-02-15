@@ -2,7 +2,7 @@
   "service": {
     "specVersion": "v3",
     "catalog_metadata": {
-      "name": "Lamp Stack Deployment with Tags - New",
+      "name": "Lamp Stack Deployment with Tags",
       "description": "deploys a single VM to the chosen cloud",
       "image": "serviceicon_6.svg",
       "category": "Think Demos",
@@ -261,7 +261,7 @@
                   {
                     "case": "AWS",
                     "sequence": {
-                      "0": "lampstacbd61e316"
+                      "0": "lampstacffd2162e"
                     }
                   },
                   {
@@ -314,11 +314,11 @@
               }
             },
             {
-              "LAMP stack deployment": {
-                "title": "LAMP stack deployment_728516",
-                "template_name": "LAMP stack deployment",
-                "version": "2.2",
-                "id": "lampstacbd61e316",
+              "LAMP stack deployment with tags": {
+                "title": "LAMP stack deployment with tags_650252",
+                "template_name": "LAMP stack deployment with Tags",
+                "version": "master",
+                "id": "lampstacffd2162e",
                 "template_type": "Terraform",
                 "template_content_type": "Amazon EC2",
                 "template_provider": "Amazon EC2",
@@ -331,9 +331,9 @@
                   "aws_region": "us-east-1",
                   "aws_image": "ubuntu/images/hvm-ssd/ubuntu-xenial-16.04-amd64-server-*",
                   "aws_ami_owner_id": "099720109477",
-                  "php_instance_name": "${input_parameters.lamp_prefix}Php",
+                  "php_instance_name": "${input_parameters.lamp_prefix}php",
                   "db_instance_name": "${input_parameters.lamp_prefix}Db",
-                  "network_name_prefix": "opencontent-${input_parameters.lamp_prefix}",
+                  "network_name_prefix": "opencontent-l${input_parameters.lamp_prefix}",
                   "public_key_name": "cam-public-key-${input_parameters.lamp_prefix}",
                   "public_key": "${input_parameters.public_key}",
                   "cam_user": "camuser",
@@ -370,7 +370,7 @@
               "Google Cloud LAMP stack deployment with tags": {
                 "title": "Google Cloud LAMP stack deployment with tags_082d2f",
                 "template_name": "Google Cloud LAMP stack deployment with tags",
-                "version": "tags",
+                "version": "master",
                 "id": "googleclec4bac1b",
                 "template_type": "Terraform",
                 "template_content_type": "Google Cloud",
@@ -384,10 +384,10 @@
                   "boot_disk": "rhel-cloud/rhel-7",
                   "machine_type": "n1-standard-1",
                   "zone": "us-central1-a",
-                  "mariadb_hostname": "${input_parameters.lamp_prefix}mdb",
+                  "mariadb_hostname": "${input_parameters.lamp_prefix}",
                   "mariadb_user": "camuser",
                   "mariadb_pwd": "${input_parameters.mariadb_pwd}",
-                  "php_hostname": "${input_parameters.lamp_prefix}php",
+                  "php_hostname": "${input_parameters.lamp_prefix}",
                   "gce_ssh_user": "camuser",
                   "gce_ssh_public_key": "${input_parameters.gce_ssh_pub_key}",
                   "gce_ssh_private_key": "${input_parameters.gce_ssh_pri_key}"
@@ -411,7 +411,7 @@
                 "sender": "CAMadmin",
                 "copyToList": "",
                 "subject": "Your LAMP stack is ready",
-                "body": "Your LAM Stack is deployed and you can access it here\n\nhttps://169.48.27.244:30000/cam/portal/#!/serviceDetails/${svc_instance.service_instance_id}\n\nIn the terraform logs you will find a link to the php test page"
+                "body": "Your LAM Stack is deployed and you can access it here\n\nhttps://169.48.27.250:30000/cam/portal/#!/serviceDetails/${svc_instance.service_instance_id}\n\nIn the terraform logs you will find a link to the php test page"
               }
             },
             {
@@ -423,7 +423,7 @@
                 "sender": "CAMadmin",
                 "copyToList": "",
                 "subject": "Your LAMP stack failed to deploy",
-                "body": "Check into the failures here\n   \nhttps://169.48.27.244:30000/cam/portal/#!/serviceDetails/${svc_instance.service_instance_id}"
+                "body": "Check into the failures here\n   \nhttps://169.48.27.250:30000/cam/portal/#!/serviceDetails/${svc_instance.service_instance_id}"
               }
             }
           ],
