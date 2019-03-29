@@ -97,6 +97,29 @@
       "group_name": "virtualmachine"
     },
     {
+      "name": "vm_1_second_disk_keep_on_remove",
+      "type": "string",
+      "description": "Delete secondary disk volume when the virtual machine is deleted",
+      "default": "false",
+      "hidden": true,
+      "label": "Delete the second disk volume when the virtual machine is deleted - vm_1",
+      "secured": false,
+      "options": [
+        {
+          "value": "false",
+          "label": "False",
+          "default": "true"
+        },
+        {
+          "value": "true",
+          "label": "True"
+        }
+      ],
+      "required": true,
+      "immutable": false,
+      "group_name": "virtualmachine"
+    },
+    {
       "name": "vm_1_domain",
       "type": "string",
       "description": "Domain Name of virtual machine",
@@ -125,6 +148,18 @@
       "default": "25",
       "hidden": false,
       "label": "Root Disk Size - vm_1",
+      "secured": false,
+      "required": true,
+      "immutable": false,
+      "group_name": "virtualmachine"
+    },
+    {
+      "name": "vm_1_second_disk_size",
+      "type": "string",
+      "description": "Size of secondary disk volume. Should be equal to template's disk size",
+      "default": "25",
+      "hidden": false,
+      "label": "Secondary Disk Size - vm_1",
       "secured": false,
       "required": true,
       "immutable": false,
