@@ -180,7 +180,37 @@
             "required": true,
             "secured": false,
             "description": "Email address to which you want instance details sent to",
-            "default": "ifwatts@ca.ibm.com"
+            "default": "ifwatts@ca.ibm.com",
+            "regex": "^[a-zA-Z0-9_.+-]*@[a-zA-Z0-9.]*\\.[a-zA-Z]*$",
+            "regexdesc": "valid email address"
+          },
+          {
+            "name": "ints_prefix",
+            "label": "Instance Prefix",
+            "customtype": "string",
+            "type": "string",
+            "immutable": false,
+            "hidden": false,
+            "required": true,
+            "secured": false,
+            "description": "The prefix added to your cloud provider instance names",
+            "default": "lampdemo1",
+            "regex": "^[a-z][a-z0-9\\._]{2,9}$",
+            "regexdesc": "Between 2-9 chars, lowercase alpha, numeric, underscore and period are allowed"
+          },
+          {
+            "name": "user_id",
+            "label": "Admin User Name",
+            "customtype": "string",
+            "type": "string",
+            "immutable": false,
+            "hidden": false,
+            "required": true,
+            "secured": false,
+            "description": "Admin username setup on the cloud instances",
+            "default": "ifwatts",
+            "regex": "^[a-z][a-z0-9]{6,12}$",
+            "regexdesc": "starts with lowercase alpha and contains lowercase alpha or numeric with length of between 6 - 12"
           },
           {
             "name": "inst_pwd",
@@ -192,7 +222,9 @@
             "required": true,
             "secured": true,
             "description": "password that will be set on each instance and user in the deployment",
-            "default": "^(VGhpbms0bWUh)"
+            "default": "^(VGhpbms0bWUh)",
+            "regex": "[a-zA-Z0-9]{7,16}",
+            "regexdesc": "password must contain lowercase, uppercase alpha and numeric chars, min leght 8, max 16"
           },
           {
             "name": "gcp_private_key",
@@ -215,20 +247,6 @@
             "default": "^(c3NoLXJzYSBBQUFBQjNOemFDMXljMkVBQUFBREFRQUJBQUFCQVFDNlJwTFpSdWluZXcrRTREWU1zR294dnQzVWhRQnloZWtzc2NqWVRmR1NkaGk5TmZtVmlIVmV4TUNNSlJwMmJwK0NRekhiNmtORmhDRURqUTNTMnVOa29qSEdmMXFWZndwb1BWTG5GN2tEdDJqcXpjK0k3dGV4Uy9JTnZ4WEdGd2krMmo4SHlHc2FxRTZNY1V2Tkt2Q0FWMys1OXhUcGdkYS9oQW80Tk0vNjhJUmxBd0ZQdzJncWNWaVBlVUhYZlV3aXFUc05hdUdObFNFNEVQWE8xT2E5MjZNSXc0OCtXb3RWV0xkcnMvT0dYcmhNSVM1ajFIS2NZUTcrd0pFMHZONElYbFk5K0twd0RKdEJKRHk4MW03bmpSaU52TVBwS0lPTExwSUcvd3BzMVlPdkttOVBRbVJxVWFUVXBab09YWWVLclE2THBxLzYrSk9abWdzQ0dCVFogaWZ3YXR0c0BjYS5pYm0uY29tQGlhbnMtbWJwLndhci5jYW4uaWJtLmNvbQ==)"
           },
           {
-            "name": "ints_prefix",
-            "label": "Instance Name Prefix",
-            "customtype": "string",
-            "type": "string",
-            "immutable": false,
-            "hidden": false,
-            "required": true,
-            "secured": false,
-            "description": "supply the prefix to be applied to your instances name in the cloud",
-            "default": "lampdemo",
-            "regex": "^[a-z0-9][a-z0-9\\._]*$",
-            "regexdesc": "only lower case alpha, numeric, and underscore are allowed"
-          },
-          {
             "name": "cam_ip",
             "customtype": "string",
             "type": "string",
@@ -237,34 +255,6 @@
             "required": false,
             "secured": false,
             "default": "9.37.194.60:30000"
-          },
-          {
-            "name": "inst_prefix",
-            "label": "Instance Prefix",
-            "customtype": "string",
-            "type": "string",
-            "immutable": false,
-            "hidden": false,
-            "required": true,
-            "secured": false,
-            "description": "The prefix added to your cloud provider instance names",
-            "default": "lampdemp1",
-            "regex": "^[a-z0-9][a-z0-9\\._]*$",
-            "regexdesc": "only lower case alpha, numeric, underscore and period are allowed"
-          },
-          {
-            "name": "user_id",
-            "label": "Admin User Name",
-            "customtype": "string",
-            "type": "string",
-            "immutable": false,
-            "hidden": false,
-            "required": true,
-            "secured": false,
-            "description": "Admin username setup on the cloud instances",
-            "default": "ifwatts",
-            "regex": "^[a-z][a-z0-9]{6,12}$",
-            "regexdesc": "starts with lowercase alpha and contains lowercase alpha or numeric with length of between 6 - 12"
           }
         ],
         "flow": {
@@ -360,7 +350,7 @@
                   "network_name_prefix": "${input_parameters.ints_prefix}-lamp",
                   "public_key_name": "${input_parameters.ints_prefix}cam-pubkey",
                   "public_key": "${input_parameters.user_ssh_pub_key}",
-                  "cam_user": "camuser",
+                  "cam_user": "${input_parameters.user_id}",
                   "cam_pwd": "${input_parameters.inst_pwd}"
                 },
                 "outputs": [],
@@ -474,7 +464,7 @@
     ],
     "plans": [
       {
-        "name": "Amason Web Services",
+        "name": "Amazon Web Services",
         "description": "Deploy a LAMP Stack to AWS environment",
         "actions": [],
         "plan_parameters": [
@@ -523,7 +513,9 @@
             "required": true,
             "secured": false,
             "description": "Email address to which you want instance details sent to",
-            "default": "ifwatts@ca.ibm.com"
+            "default": "ifwatts@ca.ibm.com",
+            "regex": "^[a-zA-Z0-9_.+-]*@[a-zA-Z0-9.]*\\.[a-zA-Z]*$",
+            "regexdesc": "valid email addresss required"
           },
           {
             "name": "inst_pwd",
@@ -600,7 +592,9 @@
             "required": true,
             "secured": false,
             "description": "Email address to which you want instance details sent to",
-            "default": "ifwatts@ca.ibm.com"
+            "default": "ifwatts@ca.ibm.com",
+            "regex": "^[a-zA-Z0-9_.+-]*@[a-zA-Z0-9.]*\\.[a-zA-Z]*$",
+            "regexdesc": "valid email addresss required"
           },
           {
             "name": "inst_pwd",
@@ -687,7 +681,9 @@
             "required": true,
             "secured": false,
             "description": "Email address to which you want instance details sent to",
-            "default": "ifwatts@ca.ibm.com"
+            "default": "ifwatts@ca.ibm.com",
+            "regex": "^[a-zA-Z0-9_.+-]*@[a-zA-Z0-9.]*\\.[a-zA-Z]*$",
+            "regexdesc": "valid email addresss required"
           },
           {
             "name": "inst_pwd",
@@ -764,7 +760,9 @@
             "required": true,
             "secured": false,
             "description": "Email address to which you want instance details sent to",
-            "default": "ifwatts@ca.ibm.com"
+            "default": "ifwatts@ca.ibm.com",
+            "regex": "^[a-zA-Z0-9_.+-]*@[a-zA-Z0-9.]*\\.[a-zA-Z]*$",
+            "regexdesc": "valid email addresss required"
           },
           {
             "name": "inst_pwd",
