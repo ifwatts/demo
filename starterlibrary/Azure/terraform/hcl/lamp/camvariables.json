@@ -9,7 +9,7 @@
     {
         "name" : "virtual_machine_size",
         "Label" : "Virtual Machine Size",
-        "description" : "Virtual machine size on Azure"
+        "description" : "Virtual machine size on Azure",
         "hidden" : false,
         "immutable : false,
         "required" : true,
