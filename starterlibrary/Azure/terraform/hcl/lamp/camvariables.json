@@ -16,12 +16,12 @@
         "type" : "string",
         "options": [
           {
-            "value" : "Standard_A2"
-            "label" : "2 vCPU, 4GiB Memory"
+            "value" : "Standard_A2",
+            "label" : "2 vCPU, 4GiB Memory",
             "default" : "true"
           },
           {
-            "value" : "Standard_A4"
+            "value" : "Standard_A4",
             "label" : "4 vCPU, 8GiB Memory"
           }
         ]
