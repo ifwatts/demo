@@ -7,6 +7,26 @@
   ],
   "template_input_params": [
     {
+        "name" : "virtual_machine_size",
+        "Label" : "Virtual Machine Size",
+        "description" : "Virtual machine size on Azure"
+        "hidden" : false,
+        "immutable : false,
+        "required" : true,
+        "type" : "string",
+        "options": [
+          {
+            "value" : "Standard_A2"
+            "label" : "2 vCPU, 4GiB Memory"
+            "default" : "true"
+          },
+          {
+            "value" : "Standard_A4"
+            "label" : "4 vCPU, 8GiB Memory"
+          }
+        ]
+    },
+    {
         "name": "azure_region",
         "label": "Azure Region",
         "description": "Azure region to deploy infrastructure resources",
