@@ -70,7 +70,7 @@ variable "user_public_key" {
 resource "random_id" "default" {
   keepers = {
     # Generate a new id each time we switch to a new AMI id
-    ami_id = "${var.ami_id}"
+    ami_id = 1
   }
   byte_length = "4"
 }
