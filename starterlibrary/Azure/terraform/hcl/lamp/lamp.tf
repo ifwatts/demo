@@ -82,21 +82,21 @@ resource "azurerm_resource_group" "default" {
 }
 
 resource "azurerm_virtual_network" "default" {
-  name                = "${var.name_prefix}-vnet"
+  name                = "${var.name_prefix}-${random_id.default.hex}-vnet"
   address_space       = ["10.0.0.0/16"]
   location            = "${var.azure_region}"
   resource_group_name = "${azurerm_resource_group.default.name}"
 }
 
 resource "azurerm_subnet" "web" {
-  name                 = "${var.name_prefix}-subnet-web"
+  name                 = "${var.name_prefix}-${random_id.default.hex}-subnet-web"
   resource_group_name  = "${azurerm_resource_group.default.name}"
   virtual_network_name = "${azurerm_virtual_network.default.name}"
   address_prefix       = "10.0.1.0/24"
 }
 
 resource "azurerm_public_ip" "web" {
-  name                         = "${var.name_prefix}-web-pip"
+  name                         = "${var.name_prefix}-${random_id.default.hex}-web-pip"
   location                     = "${var.azure_region}"
   resource_group_name          = "${azurerm_resource_group.default.name}"
   public_ip_address_allocation = "static"
@@ -104,7 +104,7 @@ resource "azurerm_public_ip" "web" {
 }
 
 resource "azurerm_network_security_group" "web" {
-  name                = "${var.name_prefix}-web-nsg"
+  name                = "${var.name_prefix}-${random_id.default.hex}-web-nsg"
   location            = "${var.azure_region}"
   resource_group_name = "${azurerm_resource_group.default.name}"
   tags                = "${module.camtags.tagsmap}"
@@ -135,7 +135,7 @@ resource "azurerm_network_security_group" "web" {
 }
 
 resource "azurerm_network_interface" "web" {
-  name                      = "${var.name_prefix}-web-nic1"
+  name                      = "${var.name_prefix}-${random_id.default.hex}-web-nic1"
   location                  = "${var.azure_region}"
   resource_group_name       = "${azurerm_resource_group.default.name}"
   network_security_group_id = "${azurerm_network_security_group.web.id}"
@@ -172,7 +172,7 @@ resource "azurerm_storage_container" "default" {
 #########################################################
 resource "azurerm_virtual_machine" "web" {
   count                 = "${var.user_public_key != "None" ? 1 : 0}"
-  name                  = "${var.name_prefix}-web-vm"
+  name                  = "${var.name_prefix}-${random_id.default.hex}-web-vm"
   location              = "${var.azure_region}"
   resource_group_name   = "${azurerm_resource_group.default.name}"
   network_interface_ids = ["${azurerm_network_interface.web.id}"]
@@ -187,7 +187,7 @@ resource "azurerm_virtual_machine" "web" {
   }
 
   storage_os_disk {
-    name          = "${var.name_prefix}-web-os-disk1"
+    name          = "${var.name_prefix}-${random_id.default.hex}-web-os-disk1"
     vhd_uri       = "${azurerm_storage_account.default.primary_blob_endpoint}${azurerm_storage_container.default.name}/${var.name_prefix}-web-os-disk1.vhd"
     caching       = "ReadWrite"
     create_option = "FromImage"
@@ -247,7 +247,7 @@ resource "azurerm_virtual_machine" "web-alternative" {
 # Deploy the SQL resource
 #########################################################
 resource "azurerm_sql_server" "db" {
-  name                         = "${var.name_prefix}-sqlserver"
+  name                         = "${var.name_prefix}-${random_id.default.hex}-sqlserver"
   resource_group_name          = "${azurerm_resource_group.default.name}"
   location                     = "${var.azure_region}"
   version                      = "12.0"
@@ -257,7 +257,7 @@ resource "azurerm_sql_server" "db" {
 }
 
 resource "azurerm_sql_database" "db" {
-  name                = "${var.name_prefix}-database"
+  name                = "${var.name_prefix}-${random_id.default.hex}-database"
   resource_group_name = "${azurerm_resource_group.default.name}"
   location            = "${var.azure_region}"
   server_name         = "${azurerm_sql_server.db.name}"
