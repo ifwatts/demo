@@ -1,0 +1,41 @@
+{
+    "name": "SystemUserInfo",
+    "label": "SystemUserInfo",
+    "description": "Data structure describing the user and connection info for vm's being deployed into environments",
+    "attributes": [
+        {
+            "name": "userid",
+            "type": "string",
+            "description": "user id create on the remote host VM",
+            "label": "VM User ID",
+            "required": "true",
+            "secured": "false",
+            "immutable": "false",
+            "hidden": "false",
+            "default": "",
+            "options": null
+        },{
+            "name": "userpwd",
+            "type": "password",
+            "description": "user pwd create on the remote host VM",
+            "label": "VM User PWD",
+            "required": "true",
+            "secured": "true",
+            "immutable": "false",
+            "hidden": "false",
+            "default": "",
+            "options": null
+        },{
+            "name": "userkey",
+            "type": "string",
+            "description": "user id create on the remote host VM",
+            "label": "VM User key",
+            "required": "true",
+            "secured": "true",
+            "immutable": "false",
+            "hidden": "false",
+            "default": "",
+            "options": null
+        }
+     ]
+ }
