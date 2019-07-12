@@ -1,5 +1,5 @@
 {
-   "name": "LAMP stack deployment on Microsoft Azure",
+   "name": "LAMP stack deployment on Microsoft Azure with VM Sizes",
    "description": "LAMP - A fully-integrated environment for full stack PHP web development.",
    "version": "1.0",
    "type": "prebuilt",
