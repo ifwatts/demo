@@ -250,7 +250,7 @@
                 "sender": "CAMadmin",
                 "copyToList": "",
                 "subject": "Your VM has been Provisioned",
-                "body": "Hello ${datatypes.SystemUserInfo.userid},\n   \n   Your LAMP stack has been provisioned to Azure.  You can find your instance info here: \nhttps://icp-console.9.37.194.52.nip.io:30000/cam/serviceinstance/${svc_instance.service_instance_id}\n\nYou can check your LAMP deployment here:\n${templates.lampstac6384db9c.output.application_url || templates.lampstac43965c81.output.application_url}",
+                "body": "Hello ${datatypes.SystemUserInfo.userid},\n   \n   Your LAMP stack has been provisioned to Azure.  You can find your instance info here: \nhttps://icp-console.9.37.194.52.nip.io:30000/cam/serviceinstance/\n\nYou can check your LAMP deployment here:\n${templates.lampstac6384db9c.output.application_url || templates.lampstac43965c81.output.application_url}",
                 "warning": false,
                 "error": false
               }
