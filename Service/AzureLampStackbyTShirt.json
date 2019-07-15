@@ -2,7 +2,7 @@
   "service": {
     "specVersion": "v3",
     "catalog_metadata": {
-      "name": "Azure Lamp Stack by T-Shirt Size",
+      "name": "Azure Lamp Stack by T-Shirt Size v2",
       "description": "Deploy a Lamp Stack into Azure, choose the size of the server you want based on your desired workload in an easy to consume way.",
       "image": "serviceicon_5.svg",
       "category": "CAM Demo Ian",
@@ -154,6 +154,16 @@
             "default": "ifwatts@ca.ibm.com",
             "regex": "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$",
             "regexdesc": "string followed by a @ then a correct domain with good extension"
+          },
+          {
+            "name": "cam_url",
+            "customtype": "string",
+            "type": "string",
+            "immutable": true,
+            "hidden": true,
+            "required": false,
+            "secured": false,
+            "default": "icp-console.9.37.194.52.nip.io:30000"
           }
         ],
         "flow": {
@@ -250,7 +260,7 @@
                 "sender": "CAMadmin",
                 "copyToList": "",
                 "subject": "Your VM has been Provisioned",
-                "body": "Hello ${datatypes.SystemUserInfo.userid},\n   \n   Your LAMP stack has been provisioned to Azure.  You can find your instance info here: \nhttps://icp-console.9.37.194.52.nip.io:30000/cam/serviceinstance/\n\nYou can check your LAMP deployment here:\n${templates.lampstac6384db9c.output.application_url || templates.lampstac43965c81.output.application_url}",
+                "body": "Hello ${datatypes.SystemUserInfo.userid},\n   \n   Your LAMP stack has been provisioned to Azure.  You can find your instance info here: \nhttps://${input_paramters.cam_url}/cam/portal/#!/serviceDetails/\n\nYou can check your LAMP deployment here:\n${templates.lampstac6384db9c.output.application_url || templates.lampstac43965c81.output.application_url}",
                 "warning": false,
                 "error": false
               }
