@@ -1,4 +1,4 @@
-{
+
   "service": {
     "specVersion": "v3",
     "catalog_metadata": {
@@ -203,13 +203,13 @@
                   {
                     "case": "small",
                     "sequence": {
-                      "0": "lampstac9176f27d"
+                      "0": "lampstack1"
                     }
                   },
                   {
                     "case": "medium",
                     "sequence": {
-                      "0": "lampstaca38945ef"
+                      "0": "lampstack2"
                     }
                   }
                 ],
@@ -227,7 +227,7 @@
                 "title": "LAMP stack deployment on Microsoft Azure with VM Sizes 67a5ec_2d76af",
                 "template_name": "LAMP stack deployment on Microsoft Azure with VM Sizes 67a5ec",
                 "version": "master",
-                "id": "lampstac9176f27d",
+                "id": "lampstack1",
                 "template_type": "Terraform",
                 "template_content_type": "Microsoft Azure",
                 "template_provider": "Microsoft Azure",
@@ -254,7 +254,7 @@
                 "title": "LAMP stack deployment on Microsoft Azure with VM Sizes 67a5ec_859350",
                 "template_name": "LAMP stack deployment on Microsoft Azure with VM Sizes 67a5ec",
                 "version": "master",
-                "id": "lampstaca38945ef",
+                "id": "lampstack2",
                 "template_type": "Terraform",
                 "template_content_type": "Microsoft Azure",
                 "template_provider": "Microsoft Azure",
@@ -288,7 +288,7 @@
                 "sender": "CAMadmin",
                 "copyToList": "",
                 "subject": "Your VM has been Provisioned",
-                "body": "Hello ${datatypes.SystemUserInfo.userid},\n   \n   Your LAMP stack has been provisioned to Azure.  You can find your instance info here: \nhttps://${input_parameters.cam_url}/cam/portal/#!/serviceDetails/${svc_instance.service_instance_id}\n\n\nYou can check your LAMP deployment here:\n${templates.lampstaca38945ef.output.application_url || templates.lampstac9176f27d.output.application_url}",
+                "body": "Hello ${datatypes.SystemUserInfo.userid},\n   \n   Your LAMP stack has been provisioned to Azure.  You can find your instance info here: \nhttps://${input_parameters.cam_url}/cam/portal/#!/serviceDetails/${svc_instance.service_instance_id}\n\n\nYou can check your LAMP deployment here:\n${templates.lampstack2.output.application_url || templates.lampstack1.output.application_url}",
                 "warning": false,
                 "error": false
               }
@@ -310,7 +310,7 @@
             "hidden": false,
             "required": false,
             "secured": false,
-            "default": "${templates.lampstaca38945ef.output.application_url || templates.lampstac9176f27d.output.application_url}"
+            "default": "${templates.lampstack2.output.application_url || templates.lampstack1.output.application_url}"
           }
         ],
         "datatypes": [
