@@ -19,7 +19,7 @@
       "bindable": false,
       "updatable": "",
       "systemTags": true,
-      "author": "admin"
+      "author": "Ian I.F."
     },
     "tags": [
       {
@@ -77,6 +77,34 @@
         "default": "${svc_instance.service_instance_id}",
         "customtype": "string",
         "permission": "Read-Only"
+      },
+      {
+        "name": "department",
+        "label": "Department",
+        "type": "string",
+        "immutable": false,
+        "hidden": false,
+        "required": true,
+        "secured": false,
+        "description": "The Department charged for the workload",
+        "options": [
+          {
+            "label": "Development",
+            "value": "dev",
+            "default": false
+          },
+          {
+            "label": "Test",
+            "value": "test",
+            "default": false
+          },
+          {
+            "label": "Sales",
+            "value": "sales",
+            "default": false
+          }
+        ],
+        "customtype": "string"
       }
     ],
     "actions": [
@@ -163,7 +191,7 @@
             "hidden": true,
             "required": false,
             "secured": false,
-            "default": "icp-console.9.37.194.52.nip.io:30000"
+            "default": "9.37.194.60:30000"
           }
         ],
         "flow": {
@@ -175,13 +203,13 @@
                   {
                     "case": "small",
                     "sequence": {
-                      "0": "lampstac6384db9c"
+                      "0": "lampstac9176f27d"
                     }
                   },
                   {
                     "case": "medium",
                     "sequence": {
-                      "0": "lampstac43965c81"
+                      "0": "lampstaca38945ef"
                     }
                   }
                 ],
@@ -195,16 +223,16 @@
           ],
           "templates": [
             {
-              "LAMP stack deployment on Microsoft Azure with VM Sizes": {
-                "title": "LAMP stack deployment small",
-                "template_name": "LAMP stack deployment on Microsoft Azure with VM Sizes",
+              "LAMP stack deployment on Microsoft Azure with VM Sizes 67a5ec": {
+                "title": "LAMP stack deployment on Microsoft Azure with VM Sizes 67a5ec_2d76af",
+                "template_name": "LAMP stack deployment on Microsoft Azure with VM Sizes 67a5ec",
                 "version": "master",
-                "id": "lampstac6384db9c",
+                "id": "lampstac9176f27d",
                 "template_type": "Terraform",
                 "template_content_type": "Microsoft Azure",
                 "template_provider": "Microsoft Azure",
                 "instance_name": "",
-                "cloud_connection_name": "azure",
+                "cloud_connection_name": "demo-msAzure",
                 "template_data_objects": {
                   "bastionhost": "DefaultNoBastionHostRequired"
                 },
@@ -222,16 +250,16 @@
               }
             },
             {
-              "LAMP stack deployment on Microsoft Azure with VM Sizes": {
-                "title": "LAMP stack deployment medium",
-                "template_name": "LAMP stack deployment on Microsoft Azure with VM Sizes",
+              "LAMP stack deployment on Microsoft Azure with VM Sizes 67a5ec": {
+                "title": "LAMP stack deployment on Microsoft Azure with VM Sizes 67a5ec_859350",
+                "template_name": "LAMP stack deployment on Microsoft Azure with VM Sizes 67a5ec",
                 "version": "master",
-                "id": "lampstac43965c81",
+                "id": "lampstaca38945ef",
                 "template_type": "Terraform",
                 "template_content_type": "Microsoft Azure",
                 "template_provider": "Microsoft Azure",
                 "instance_name": "",
-                "cloud_connection_name": "azure",
+                "cloud_connection_name": "demo-msAzure",
                 "template_data_objects": {
                   "bastionhost": "DefaultNoBastionHostRequired"
                 },
@@ -260,7 +288,7 @@
                 "sender": "CAMadmin",
                 "copyToList": "",
                 "subject": "Your VM has been Provisioned",
-                "body": "Hello ${datatypes.SystemUserInfo.userid},\n   \n   Your LAMP stack has been provisioned to Azure.  You can find your instance info here: \nhttps://${input_paramters.cam_url}/cam/portal/#!/serviceDetails/\n\nYou can check your LAMP deployment here:\n${templates.lampstac6384db9c.output.application_url || templates.lampstac43965c81.output.application_url}",
+                "body": "Hello ${datatypes.SystemUserInfo.userid},\n   \n   Your LAMP stack has been provisioned to Azure.  You can find your instance info here: \nhttps://${input_parameters.cam_url}/cam/portal/#!/serviceDetails/${svc_instance.service_instance_id}\n\n\nYou can check your LAMP deployment here:\n${templates.lampstaca38945ef.output.application_url || templates.lampstac9176f27d.output.application_url}",
                 "warning": false,
                 "error": false
               }
@@ -282,7 +310,7 @@
             "hidden": false,
             "required": false,
             "secured": false,
-            "default": "${templates.lampstac6384db9c.output.application_url || templates.lampstac43965c81.output.application_url}"
+            "default": "${templates.lampstaca38945ef.output.application_url || templates.lampstac9176f27d.output.application_url}"
           }
         ],
         "datatypes": [
@@ -325,6 +353,43 @@
             "secured": false,
             "description": "vm_image_name",
             "default": "Standard_A2"
+          },
+          {
+            "customtype": "sharedparameter",
+            "type": "sharedparameter",
+            "immutable": false,
+            "hidden": false,
+            "required": true,
+            "secured": false,
+            "description": "",
+            "default": "",
+            "datatype": "SystemUserInfo",
+            "name": "SystemUserInfo",
+            "label": "SystemUserInfo"
+          },
+          {
+            "name": "user_email",
+            "label": "User Email",
+            "customtype": "string",
+            "type": "string",
+            "immutable": false,
+            "hidden": false,
+            "required": false,
+            "secured": false,
+            "description": "Email address where connection information will be sent",
+            "default": "ifwatts@ca.ibm.com",
+            "regex": "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$",
+            "regexdesc": "string followed by a @ then a correct domain with good extension"
+          },
+          {
+            "name": "cam_url",
+            "customtype": "string",
+            "type": "string",
+            "immutable": true,
+            "hidden": true,
+            "required": false,
+            "secured": false,
+            "default": "9.37.194.60:30000"
           }
         ]
       },
@@ -354,6 +419,43 @@
             "secured": false,
             "description": "vm_image_name",
             "default": "Standard_A4"
+          },
+          {
+            "customtype": "sharedparameter",
+            "type": "sharedparameter",
+            "immutable": false,
+            "hidden": false,
+            "required": true,
+            "secured": false,
+            "description": "",
+            "default": "",
+            "datatype": "SystemUserInfo",
+            "name": "SystemUserInfo",
+            "label": "SystemUserInfo"
+          },
+          {
+            "name": "user_email",
+            "label": "User Email",
+            "customtype": "string",
+            "type": "string",
+            "immutable": false,
+            "hidden": false,
+            "required": false,
+            "secured": false,
+            "description": "Email address where connection information will be sent",
+            "default": "ifwatts@ca.ibm.com",
+            "regex": "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$",
+            "regexdesc": "string followed by a @ then a correct domain with good extension"
+          },
+          {
+            "name": "cam_url",
+            "customtype": "string",
+            "type": "string",
+            "immutable": true,
+            "hidden": true,
+            "required": false,
+            "secured": false,
+            "default": "9.37.194.60:30000"
           }
         ]
       }
