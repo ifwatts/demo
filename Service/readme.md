@@ -1,9 +1,8 @@
 ## LinuxOne Service demo
-For LinuxOne service you need to first import the
+1. For LinuxOne service you need to first import the
 https://github.com/ifwatts/demo/tree/test/starterlibrary/OpenStack/terraform/hcl/single-vm-deploy
-
-Then import the service
-
+2. Then import the service
+https://github.com/ifwatts/demo/blob/master/Service/SingleVMLinueOneAddUser.json
 
 ## Azure VM t_shirt sizes
 Steps:
