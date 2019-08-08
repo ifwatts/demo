@@ -106,12 +106,12 @@
           {
             "name": "userid",
             "label": "User ID",
-            "customtype": "password",
-            "type": "password",
+            "customtype": "string",
+            "type": "string",
             "immutable": false,
             "hidden": false,
             "required": true,
-            "secured": true,
+            "secured": false,
             "description": "Enter the userid to be created on the vm",
             "regex": "([a-z_][a-z0-9_]{0,30})",
             "regexdesc": "a lowercase or underscore, followed by zero to thirty alphanumeric characters",
@@ -205,11 +205,11 @@
           {
             "name": "image_user",
             "label": "",
-            "customtype": "password",
-            "type": "password",
+            "customtype": "string",
+            "type": "string",
             "immutable": true,
             "hidden": true,
-            "required": false,
+            "required": true,
             "secured": true,
             "description": "",
             "default": "^(cm9vdA==)"
@@ -234,9 +234,9 @@
             "immutable": true,
             "hidden": true,
             "required": false,
-            "secured": false,
+            "secured": true,
             "description": "The name of a ssh key pair which will be injected into the instance when they are created. The key pair must already be created and associated with the tenant's account. Changing key pair name creates a new instance.",
-            "default": "cam"
+            "default": "^(Y2Ft)"
           }
         ],
         "flow": {
@@ -298,7 +298,20 @@
           },
           "error_sequence": {}
         },
-        "output_parameters": []
+        "output_parameters": [
+          {
+            "name": "vm_ip",
+            "label": "VM IP Address",
+            "customtype": "string",
+            "type": "string",
+            "immutable": true,
+            "hidden": false,
+            "required": false,
+            "secured": false,
+            "description": "IP Address of the vm",
+            "default": "${templates.openstac586187e0.output.single-vm-ip}"
+          }
+        ]
       }
     ],
     "plans": [
