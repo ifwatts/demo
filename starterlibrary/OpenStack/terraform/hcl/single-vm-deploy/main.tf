@@ -74,6 +74,7 @@ resource "openstack_compute_instance_v2" "single-vm" {
     timeout  = "10m"
   }
 
+
   provisioner "file" {
     content = <<EOF
 #!/bin/bash

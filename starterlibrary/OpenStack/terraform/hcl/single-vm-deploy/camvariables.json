@@ -101,7 +101,8 @@
       "secured": false,
       "required": true,
       "immutable": false,
-      "group_name": "virtualmachine"
+      "group_name": "virtualmachine",
+      "default": "root"
     },
     {
       "name":  "image_user_pwd",
@@ -112,7 +113,8 @@
       "secured": true,
       "required": false,
       "immutable": false,
-      "group_name": "virtualmachine"
+      "group_name": "virtualmachine",
+      "default": "zlinux"
     },
     {
       "name": "instance_name",
