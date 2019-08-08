@@ -81,7 +81,7 @@ resource "openstack_compute_instance_v2" "single-vm" {
 USER=$1
 PASSWORD=$2
 sudo useradd -m $USER
-echo -e "${PASSWORD}\n${PASSWORD}" | (sudo passwd $USER)
+echo -e "$${PASSWORD}\n$${PASSWORD}" | (sudo passwd $USER)
 EOF
 
     destination = "/tmp/addUser.sh"
