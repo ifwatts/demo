@@ -99,11 +99,11 @@ EOF
     content = <<EOF
 # Created by Cloud Automation Manager
 
-# User rules for $${var.user_id}
-$${var.user_id} ALL=(ALL) NOPASSWD:ALL
+# User rules for ${var.user_id}
+${var.user_id} ALL=(ALL) NOPASSWD:ALL
 
-# User rules for $${var.user_id}
-$${var.user_id} ALL=(ALL) NOPASSWD:ALL
+# User rules for ${var.user_id}
+${var.user_id} ALL=(ALL) NOPASSWD:ALL
 EOF
     destination = "/etc/sudoers.d/cam-added-users"
   }
