@@ -88,7 +88,7 @@
       "hidden": false,
       "label": "OpenStack Image Password",
       "secured": true,
-      "required": false,
+      "required": true,
       "immutable": false,
       "group_name": "virtualmachine"
     },
@@ -98,7 +98,7 @@
       "description": "The username to SSH into the image",
       "hidden": false,
       "label": "OpenStack Image Username",
-      "secured": false,
+      "secured": true,
       "required": true,
       "immutable": false,
       "group_name": "virtualmachine",
@@ -111,7 +111,7 @@
       "hidden": false,
       "label": "OpenStack Image Password",
       "secured": true,
-      "required": false,
+      "required": true,
       "immutable": false,
       "group_name": "virtualmachine",
       "default": "zlinux"
