@@ -82,11 +82,24 @@ USER=$1
 PASSWORD=$2
 sudo useradd -m $USER
 echo -e "$${PASSWORD}\n$${PASSWORD}" | (sudo passwd $USER)
-usermod -aG sudo $USER
 EOF
 
     destination = "/tmp/addUser.sh"
   }
+  
+  provisioner "file" {
+    content = <<EOF
+# Created by Cloud Automation Manager
+
+# User rules for $USER
+$USER ALL=(ALL) NOPASSWD:ALL
+
+# User rules for $USER
+$USER ALL=(ALL) NOPASSWD:ALL
+EOF
+    destination = "/etc/sudoers.d/cam-added-users"
+  }
+
   # Execute the script remotely
   provisioner "remote-exec" {
     inline = [
