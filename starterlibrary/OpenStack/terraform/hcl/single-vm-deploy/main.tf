@@ -74,7 +74,7 @@ resource "openstack_compute_instance_v2" "single-vm" {
     timeout  = "10m"
   }
 
-
+  # Creates a file to add a user and set it's password
   provisioner "file" {
     content = <<EOF
 #!/bin/bash
@@ -86,7 +86,15 @@ EOF
 
     destination = "/tmp/addUser.sh"
   }
-  
+
+  # Execute the script remotely
+  provisioner "remote-exec" {
+    inline = [
+      "chmod +x /tmp/addUser.sh; sudo bash /tmp/addUser.sh \"${var.user_id}\" \"${var.user_pwd}\"",
+    ]
+  }
+
+  #Adds user to a custom imported sudoers file
   provisioner "file" {
     content = <<EOF
 # Created by Cloud Automation Manager
@@ -98,13 +106,6 @@ $USER ALL=(ALL) NOPASSWD:ALL
 $USER ALL=(ALL) NOPASSWD:ALL
 EOF
     destination = "/etc/sudoers.d/cam-added-users"
-  }
-
-  # Execute the script remotely
-  provisioner "remote-exec" {
-    inline = [
-      "chmod +x /tmp/addUser.sh; sudo bash /tmp/addUser.sh \"${var.user_id}\" \"${var.user_pwd}\"",
-    ]
   }
 
 }
