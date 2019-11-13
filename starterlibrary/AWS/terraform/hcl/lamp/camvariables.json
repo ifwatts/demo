@@ -253,7 +253,7 @@
         "required": true,
         "secured": false,
         "type": "string",
-        "regex": "^ssh-rsa AAAA[0-9A-Za-z+/]+[=]{0,3}( [^@]+@[^@]+| [^@]+){0,1}$",
+        "regex": "^ssh-rsa [0-9A-Za-z+/]+[=]{0,3}( [^@]+@[^@]+| [^@]+){0,1}$",
         "group_name": "ssh_keys"
     },
     {
